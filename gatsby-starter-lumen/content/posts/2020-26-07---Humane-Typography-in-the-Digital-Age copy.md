@@ -1,0 +1,30 @@
+---
+title: 에러노트 🔥 ) Failed to create provisioning profile. & No profiles for {Bundle Ientifier} were found.
+date: "2020-07-26T22:40:32.169Z"
+template: "post"
+draft: false
+slug: "error-note-2/"
+category: "에러노트"
+tags:
+  - "Design"
+  - "Dody"
+  - "Web Development"
+description: "안녕하세용 도디예용 오늘은 xCode에서 발견한 에러를 가져왔어용 ..."
+socialImage: "/media/42-line-bible.jpg"
+---
+
+<!-- 다른 시리즈들을 넣어놓으면 되겠다. -->
+- [The first transition](#the-first-transition)
+
+안녕하세용 도디예용   
+오늘은 xCode에서 발견한 에러를 가져왔어용   
+![](https://images.velog.io/images/dody_/post/d28cecad-e78f-4a50-9121-f071f8788f93/Screen%20Shot%202020-07-10%20at%206.17.25%20PM%20(1).png)
+
+### 🔥 에러   
+Failed to create provisioning profile.   
+No profile for {Bundle Ientifier} were found.    
+
+### 🚒 에러 해결법   
+얘네가 발생하는 이유는 Bundle Identifier이 고유값이 아니기 때문이예용.    
+고유한 id값이 되도록 Bundle Identifier 값을 수정해보시면 바로 에러가 사라질거예용ㅎㅎㅎ
+쏘이지

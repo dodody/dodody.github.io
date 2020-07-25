@@ -15,7 +15,7 @@ const Feed = ({ edges }: Props) => (
       <div className={styles['feed__item']} key={edge.node.fields.slug}>
         <div className={styles['feed__item-meta']}>
           <time className={styles['feed__item-meta-time']} dateTime={moment(edge.node.frontmatter.date).format('MMMM D, YYYY')}>
-            {moment(edge.node.frontmatter.date).format('MMMM YYYY')}
+            {moment(edge.node.frontmatter.date).format('YYYY.MM.DD')}
           </time>
           <span className={styles['feed__item-meta-divider']} />
           <span className={styles['feed__item-meta-category']}>
@@ -26,7 +26,6 @@ const Feed = ({ edges }: Props) => (
           <Link className={styles['feed__item-title-link']} to={edge.node.fields.slug}>{edge.node.frontmatter.title}</Link>
         </h2>
         <p className={styles['feed__item-description']}>{edge.node.frontmatter.description}</p>
-        {/* <Link className={styles['feed__item-readmore']} to={edge.node.fields.slug}>자세히 보기</Link> */}
       </div>
     ))}
   </div>

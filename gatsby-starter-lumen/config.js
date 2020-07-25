@@ -16,32 +16,37 @@ module.exports = {
       path: '/'
     },
     // category : React
-    // React
+    // slug : react-1/
     {
       label: 'React',
       path: '/category/react/'
     },
     // category : React Native
+    // slug : react-native-1/
     {
       label: 'React Native',
       path: '/category/react-native/'
     },
     // category : React 라이브러리
+    // slug : react-library-1/
     {
       label: 'React 라이브러리',
       path: '/category/react-라이브러리/'
     },
     // category : React Native 라이브러리
+    // slug : react-native-library-1/
     {
       label: 'React Native 라이브러리',
       path: '/category/react-native-라이브러리/'
     },
     // category : 에러노트
+    // slug : error-note-1/
     {
       label: '에러노트',
       path: '/category/에러노트/'
     },
     // category : 개발기
+    // slug : developer-story-1/
     {
       label: '개발기',
       path: '/category/개발기/'

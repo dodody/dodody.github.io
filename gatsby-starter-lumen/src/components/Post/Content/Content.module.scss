@@ -27,7 +27,7 @@
         text-align: center;
         margin-top: 0;
         @include padding(1, 0);
-
+        
         & p {
           max-width: $layout-post-width;
           font-size: $typographic-base-font-size * 1.6817;
@@ -63,19 +63,20 @@
     padding: 0;
 
     &__title {
-      font-size: $typographic-base-font-size * 3;
-      @include line-height(2.25);
+      font-size: $typographic-base-font-size * 2.2;
+      @include line-height(1.8);
       @include margin-top(2.25);
-      @include margin-bottom(1.5)
+      @include margin-bottom(1.5);
+      text-align: left;
     }
 
     &__body {
-      font-size: $typographic-base-font-size * 1.125;
+      font-size: $typographic-base-font-size * 1;
       @include line-height(1.125);
       @include margin-bottom(1.125);
 
       & p {
-        font-size: $typographic-base-font-size * 1.125;
+        font-size: $typographic-base-font-size * 1;
         @include line-height(1.125);
         @include margin-bottom(1.125)
       }
