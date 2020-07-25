@@ -3,8 +3,8 @@ title: "Johannes Gutenberg: The Birth of Movable Type"
 date: "2017-08-18T22:12:03.284Z"
 template: "post"
 draft: false
-slug: "the-birth-of-movable-type"
-category: "Typography"
+slug: "error note"
+category: "에러노트"
 tags:
   - "Open source"
   - "Gatsby"

@@ -13,31 +13,42 @@ module.exports = {
   menu: [
     {
       label: '안녕하세용!',
-      path: '/pages/aboutdody'
+      path: '/'
     },
+    // category : React
+    // React
     {
       label: 'React',
-      path: '/pages/react'
+      path: '/category/react/'
     },
+    // category : React Native
     {
       label: 'React Native',
-      path: '/pages/rn'
+      path: '/category/react-native/'
     },
-    {
-      label: 'RN 라이브러리',
-      path: '/pages/rnlibrary'
-    },
+    // category : React 라이브러리
     {
       label: 'React 라이브러리',
-      path: '/pages/reactlibrary'
+      path: '/category/react-라이브러리/'
     },
+    // category : React Native 라이브러리
+    {
+      label: 'React Native 라이브러리',
+      path: '/category/react-native-라이브러리/'
+    },
+    // category : 에러노트
     {
       label: '에러노트',
-      path: '/pages/errornote'
+      path: '/category/에러노트/'
     },
+    // category : 개발기
     {
       label: '개발기',
-      path: '/pages/developerstory'
+      path: '/category/개발기/'
+    },
+    {
+      label: 'About Dody',
+      path: '/pages/about'
     }
   ],
   author: {
