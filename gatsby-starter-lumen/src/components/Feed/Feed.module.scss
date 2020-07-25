@@ -30,8 +30,9 @@
 
     &-description {
       font-size: 0.875rem;
-      color: #333;
+      color: #777;
       line-height: 1.5;
+      font-weight: 300;
       @include margin-top(0.2);
       @include margin-bottom(0.3);
     }
@@ -40,7 +41,7 @@
       &-time {
         font-size: $typographic-small-font-size;
         color: $color-base;
-        font-weight: 600;
+        font-weight: 300;
         text-transform: uppercase;
       }
 
