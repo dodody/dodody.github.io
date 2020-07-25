@@ -29,7 +29,8 @@
 
   &__subtitle {
     color: $color-gray;
-    @include line-height(1);
+    font-size: 0.875rem;
+    @include line-height(0.875);
     @include margin-bottom(1)
   }
 
