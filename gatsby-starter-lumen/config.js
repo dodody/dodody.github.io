@@ -6,8 +6,8 @@ module.exports = {
   title: '도디의 기술블로그',
   subtitle: 'react와 react native로 개발하는걸 사랑하고, UXUI 디자인이 취미인 도딥니다 (๑˃̵ᴗ˂̵)و',
   copyright: '© All rights reserved.',
-  disqusShortname: '',
-  postsPerPage: 4,
+  disqusShortname: 'dody',
+  postsPerPage: 10,
   googleAnalyticsId: 'UA-73379983-2',
   useKatex: false,
   menu: [
