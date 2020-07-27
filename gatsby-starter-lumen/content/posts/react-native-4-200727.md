@@ -1,12 +1,12 @@
 ---
-title: React Native) 안드로이드 버전 수정하기
+title: RN) Android 버전 수정하기
 date: "2020-07-27T02:31:05+09:00"
 template: "post"
 draft: false
 slug: "react-native-4/"
 category: "React Native"
 tags:
-description: "안녕하세요 도디예용 오늘은 안드로이드 버전 수정하기 짧게 공유드릴게용. 이번에 firebase에 app distribution에..."
+description: "안녕하세요 도디예용 오늘은 안드로이드 버전 수정하기 짧게 공유드릴게용. 이번에 firebase에 app dis..."
 ---
 
 안녕하세요 도디예용   

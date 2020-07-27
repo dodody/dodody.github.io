@@ -17,10 +17,10 @@ module.exports = {
     },
     // category : React
     // slug : react-1/
-    {
-      label: 'React',
-      path: '/category/react/'
-    },
+    // {
+    //   label: 'React',
+    //   path: '/category/react/'
+    // },
     // category : React Native
     // slug : react-native-1/
     {
@@ -33,11 +33,11 @@ module.exports = {
       label: 'React 라이브러리',
       path: '/category/react-라이브러리/'
     },
-    // category : React Native 라이브러리
+    // category : RN 라이브러리
     // slug : react-native-library-1/
     {
       label: 'React Native 라이브러리',
-      path: '/category/react-native-라이브러리/'
+      path: '/category/rn-라이브러리/'
     },
     // category : 에러노트
     // slug : error-note-1/
@@ -52,9 +52,17 @@ module.exports = {
       path: '/category/개발기/'
     },
     {
+      label: '기술면접 사전',
+      path: '/pages/techDictionary'
+    },
+    {
+      label: '포트폴리오',
+      path: '/pages/portfolio'
+    },
+    {
       label: 'About Dody',
       path: '/pages/about'
-    }
+    },
   ],
   author: {
     name: '개발자 도디',

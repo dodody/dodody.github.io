@@ -5,16 +5,11 @@ template: "post"
 draft: false
 slug: "error-note-4/"
 category: "에러노트"
-tags:
-  - "Design"
-  - "Dody"
-  - "Web Development"
+tags: 
+  - " "
 description: "안녕하세용 도디예용 배포를 위해 이것저것 만지다가 프로젝트를 빌드했더니 아래의 에러가 나타났어용 ..."
 socialImage: "/media/42-line-bible.jpg"
 ---
-
-<!-- 다른 시리즈들을 넣어놓으면 되겠다. -->
-- [The first transition](#the-first-transition)
 
 안녕하세용 도디예용   
 배포를 위해 이것저것 만지다가 프로젝트를 빌드했더니 아래의 에러가 나타났어용   

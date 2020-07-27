@@ -1,12 +1,12 @@
 ---
-title: React Native) 안드로이드 디바이스 기기 테스트
+title: RN) Android 디바이스 기기 테스트 하기
 date: "2020-07-27T02:28:21+09:00"
 template: "post"
 draft: false
 slug: "react-native-3/"
 category: "React Native"
 tags:
-description: "안녕하세용 도디옝용 오늘은 안드로이드 디바이스에서 기기 테스트에 대해 알아봐용!! 에뮬레이터가 잘 되어있다 한들..."
+description: "안녕하세용 도디옝용 오늘은 안드로이드 디바이스에서 기기 테스트에 대해 알아봐용!! 에뮬레이터가 잘 되어있..."
 ---
 
 안녕하세용 도디옝용   

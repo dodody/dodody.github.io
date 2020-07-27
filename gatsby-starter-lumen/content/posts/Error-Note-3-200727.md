@@ -6,15 +6,9 @@ draft: false
 slug: "error-note-3/"
 category: "에러노트"
 tags:
-  - "Design"
-  - "Dody"
-  - "Web Development"
-description: "안녕하세용 도디예용 오늘도 새로운 에러를 마주쳤어용ㅎㅎㅎㅎ 에러가 발생한 배경 앱 아이콘을 바꾸고 나서, Xcode로 프로젝트를 실행했는데 ..."
+description: "안녕하세용 도디예용 오늘도 새로운 에러를 마주쳤어용ㅎㅎㅎㅎ 에러가 발생한 배경 앱 아이콘을 바꾸고..."
 socialImage: "/media/42-line-bible.jpg"
 ---
-
-<!-- 다른 시리즈들을 넣어놓으면 되겠다. -->
-- [The first transition](#the-first-transition)
 
 안녕하세용 도디예용   
 오늘도 새로운 에러를 마주쳤어용ㅎㅎㅎㅎ    

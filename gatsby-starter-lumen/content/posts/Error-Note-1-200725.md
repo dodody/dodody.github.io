@@ -6,15 +6,9 @@ draft: false
 slug: "error-note-1/"
 category: "에러노트"
 tags:
-  - "Design"
-  - "Dody"
-  - "Web Development"
-description: "처음에 웹개발에서 앱개발로 넘어왔을때, 리덕스 값을 콘솔에서 볼 수 없음에 슬퍼하고 당황해하고 있는 나에게 지인 개발자는 이것을 추천해주었다. react-native-debugger ... "
+description: "처음에 웹개발에서 앱개발로 넘어왔을때, 리덕스 값을 콘솔에서 볼 수 없음에 슬퍼하고 당황해하고 있는 나에게 ... "
 socialImage: "/media/42-line-bible.jpg"
 ---
-
-<!-- 다른 시리즈들을 넣어놓으면 되겠다. -->
-- [The first transition](#the-first-transition)
 
 처음에 웹개발에서 앱개발로 넘어왔을때, 리덕스 값을 콘솔에서 볼 수 없음에 슬퍼하고 당황해하고 있는 나에게   
 지인 개발자는 이것을 추천해주었다. 

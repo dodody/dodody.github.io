@@ -1,18 +1,18 @@
 ---
-title: React Native) 앱 아이콘 바꾸기
+title: RN) react native 앱 아이콘 바꾸기
 date: "2020-07-27T02:34:02+09:00"
 template: "post"
 draft: false
 slug: "react-native-5/"
 category: "React Native"
 tags:
-description: "안녕하세용 도디예용 오늘은 react native 프로젝트의 앱 아이콘을 바꿔봅시당 아이콘 사이즈 받아오기 ..."
+description: "안녕하세용 도디예용 오늘은 react native 프로젝트의 앱 아이콘을 바꿔봅시당 아이콘 사이즈 받아오기 일단..."
 ---
 
 안녕하세용 도디예용   
 오늘은 react native 프로젝트의 앱 아이콘을 바꿔봅시당   
 
-## 아이콘 사이즈 받아오기
+## 아이콘 사이즈 받아오기   
 일단 로고를 추출해놨습니당
 ![](https://images.velog.io/images/dody_/post/f8afa003-fd61-4a7e-adf8-0852d4cf8742/120.png)
 

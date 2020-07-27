@@ -6,15 +6,9 @@ draft: false
 slug: "error-note-2/"
 category: "에러노트"
 tags:
-  - "Design"
-  - "Dody"
-  - "Web Development"
-description: "안녕하세용 도디예용 오늘은 xCode에서 발견한 에러를 가져왔어용 ..."
+description: "안녕하세용 도디예용 오늘은 xCode에서 발견한 에러를 가져왔어용 Failed to create provisioning profile..."
 socialImage: "/media/42-line-bible.jpg"
 ---
-
-<!-- 다른 시리즈들을 넣어놓으면 되겠다. -->
-- [The first transition](#the-first-transition)
 
 안녕하세용 도디예용   
 오늘은 xCode에서 발견한 에러를 가져왔어용   

@@ -1,12 +1,12 @@
 ---
-title: React Native) react native .apk로 추출하기
+title: RN) react native .apk로 추출하기
 date: "2020-07-27T02:07:58+09:00"
 template: "post"
 draft: false
 slug: "react-native-1/"
 category: "React Native"
 tags:
-description: "안녕하세용 도디예용 검색하다가 처음 알았는데, apk는 android package의 줄임말이라고 한대용. 참 이런것도 궁금해하지 않는 나의 호기심 반성해~~ ..."
+description: "안녕하세용 도디예용 검색하다가 처음 알았는데, apk는 android package의 줄임말이라고 한대용. 참 이런것도..."
 ---
 
 안녕하세용 도디예용   

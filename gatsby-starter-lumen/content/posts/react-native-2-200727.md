@@ -1,12 +1,12 @@
 ---
-title: React Native) react native 앱 이름 바꾸기
+title: RN) react native 앱 이름 바꾸기
 date: "2020-07-27T02:25:17+09:00"
 template: "post"
 draft: false
 slug: "react-native-2/"
 category: "React Native"
 tags:
-description: "안녕하세용 도디예용 저는 요즘 회사에서 리액트네이티브로 앱을 만들고 있는데용 테스트용으로 대충 네이밍한 dody-rn-test 프로젝트를 실제 프로젝트로 발전시키게 되었었어용. ..."
+description: "안녕하세용 도디예용 저는 요즘 회사에서 리액트네이티브로 앱을 만들고 있는데용 테스트용으로 대충..."
 ---
 
 안녕하세용 도디예용   
