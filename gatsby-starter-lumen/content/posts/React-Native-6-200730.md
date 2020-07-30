@@ -6,7 +6,7 @@ draft: false
 slug: "react-native-6/"
 category: "React Native"
 tags:
-description: "안녕하세용 도디예용 오늘은 react native 프로젝트의 앱 아이콘을 바꿔봅시당 아이콘 사이즈 받아오기 일단..."
+description: "안녕하세요 도디예용 오늘은 react native 프로젝트를 .ipa로 추출하는 법을 알아봅시다. 저는 앱 테스트를 위해 ...   "
 ---
 
 안녕하세요 도디예용    
