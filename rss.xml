@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[도디의 기술블로그]]></title><description><![CDATA[react와 react native로 개발하는걸 사랑하고, UXUI 디자인이 취미인 도딥니다 (๑˃̵ᴗ˂̵)و]]></description><link>https://lumen.netlify.com</link><generator>GatsbyJS</generator><lastBuildDate>Thu, 30 Jul 2020 14:45:03 GMT</lastBuildDate><item><title><![CDATA[RN) react native .ipa로 추출하기 (react native app distribution에 등록하기 - iOS)]]></title><description><![CDATA[안녕하세요 도디예용 오늘은 react native 프로젝트를 .ipa로 추출하는 법을 알아봅시다. 저는 앱 테스트를 위해 ...   ]]></description><link>https://lumen.netlify.com/posts/react-native-6/</link><guid isPermaLink="false">https://lumen.netlify.com/posts/react-native-6/</guid><pubDate>Thu, 30 Jul 2020 02:36:02 GMT</pubDate><content:encoded>&lt;p&gt;안녕하세요 도디예용&lt;br&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[도디의 기술블로그]]></title><description><![CDATA[react와 react native로 개발하는걸 사랑하고, UXUI 디자인이 취미인 도딥니다 (๑˃̵ᴗ˂̵)و]]></description><link>https://lumen.netlify.com</link><generator>GatsbyJS</generator><lastBuildDate>Thu, 30 Jul 2020 15:22:24 GMT</lastBuildDate><item><title><![CDATA[RN) react native .ipa로 추출하기 (react native app distribution에 등록하기 - iOS)]]></title><description><![CDATA[안녕하세요 도디예용 오늘은 react native 프로젝트를 .ipa로 추출하는 법을 알아봅시다. 저는 앱 테스트를 위해 ...   ]]></description><link>https://lumen.netlify.com/posts/react-native-6/</link><guid isPermaLink="false">https://lumen.netlify.com/posts/react-native-6/</guid><pubDate>Thu, 30 Jul 2020 02:36:02 GMT</pubDate><content:encoded>&lt;p&gt;안녕하세요 도디예용&lt;br&gt;
 오늘은 react native 프로젝트를 .ipa로 추출하는 법을 알아봅시다.&lt;br&gt;
 저는 앱 테스트를 위해 firebase app distribution을 위해 추출합니다…   &lt;/p&gt;
 &lt;p&gt;.ipa로 추출하는 법은 정말 쉬운데, 하,,&lt;br&gt;
@@ -18,7 +18,59 @@
 &lt;h3 id=&quot;6-폴더-안에-프로젝트명app을-넣고-압축파일로-만든다&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#6-%ED%8F%B4%EB%8D%94-%EC%95%88%EC%97%90-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%EB%AA%85app%EC%9D%84-%EB%84%A3%EA%B3%A0-%EC%95%95%EC%B6%95%ED%8C%8C%EC%9D%BC%EB%A1%9C-%EB%A7%8C%EB%93%A0%EB%8B%A4&quot; aria-label=&quot;6 폴더 안에 프로젝트명app을 넣고 압축파일로 만든다 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;6. 폴더 안에 프로젝트명.app을 넣고, 압축파일로 만든다.&lt;/h3&gt;
 &lt;h3 id=&quot;7-payloadzip-파일이-만들어-졌다-그-파일명을-payloadipa로-바꾸면-ipa-추출-완료&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#7-payloadzip-%ED%8C%8C%EC%9D%BC%EC%9D%B4-%EB%A7%8C%EB%93%A4%EC%96%B4-%EC%A1%8C%EB%8B%A4-%EA%B7%B8-%ED%8C%8C%EC%9D%BC%EB%AA%85%EC%9D%84-payloadipa%EB%A1%9C-%EB%B0%94%EA%BE%B8%EB%A9%B4-ipa-%EC%B6%94%EC%B6%9C-%EC%99%84%EB%A3%8C&quot; aria-label=&quot;7 payloadzip 파일이 만들어 졌다 그 파일명을 payloadipa로 바꾸면 ipa 추출 완료 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;7. Payload.zip 파일이 만들어 졌다. 그 파일명을 Payload.ipa로 바꾸면 .ipa 추출 완료…!&lt;/h3&gt;
 &lt;hr&gt;
-&lt;p&gt;여기까지다. 제발 모두들 삽질을 덜 하기를 바란다… 나와 이 글을 읽고 있는 그대까지&lt;/p&gt;</content:encoded></item><item><title><![CDATA[React 라이브러리📚) Momentjs fromNow(), locale 한국 시간으로 수정]]></title><description><![CDATA[안녕하세용 도디예용 오늘은 momentjs 가져왔어용! 시간관련된 작업은 momentjs를 안 쓸수 없죠. 저도 예전...]]></description><link>https://lumen.netlify.com/posts/react-library-1/</link><guid isPermaLink="false">https://lumen.netlify.com/posts/react-library-1/</guid><pubDate>Mon, 27 Jul 2020 11:29:02 GMT</pubDate><content:encoded>&lt;p&gt;안녕하세용 도디예용&lt;br&gt;
+&lt;p&gt;여기까지다. 제발 모두들 삽질을 덜 하기를 바란다… 나와 이 글을 읽고 있는 그대까지&lt;/p&gt;</content:encoded></item><item><title><![CDATA[RN) react native iOS, Andriod 가로모드 막아버리기, 세로모드만 지원하기]]></title><description><![CDATA[안녕하세요 도디예요. 오늘은 react native에서 앱을 배포할때 실제 기기에서 가로모드에도 세로로 앱이...]]></description><link>https://lumen.netlify.com/posts/react-native-7/</link><guid isPermaLink="false">https://lumen.netlify.com/posts/react-native-7/</guid><pubDate>Wed, 29 Jul 2020 15:19:02 GMT</pubDate><content:encoded>&lt;p&gt;안녕하세요 도디예요.
+오늘은 react native에서 앱을 배포할때 실제 기기에서 가로모드에도 세로로 앱이 보이도록 막는법에 대해 알아보도록합니다.   &lt;/p&gt;
+&lt;p&gt;참고로 앱에서 사용되는 가로모드, 세로모드의 속성에 대한 이미지 입니다.&lt;br&gt;
+일반적인 가로모드는 Portrait입니다.   &lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;media/posts/portrait.png&quot; alt=&quot;portrait&quot;&gt;&lt;/p&gt;
+&lt;h1 id=&quot;android에서-가로모드-막기&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#android%EC%97%90%EC%84%9C-%EA%B0%80%EB%A1%9C%EB%AA%A8%EB%93%9C-%EB%A7%89%EA%B8%B0&quot; aria-label=&quot;android에서 가로모드 막기 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Android에서 가로모드 막기&lt;/h1&gt;
+&lt;p&gt;&lt;strong&gt;android/app/src/main/AndroidManifest.xml&lt;/strong&gt;에서 컨트롤을 합니다.&lt;br&gt;
+어플리케이션 정보를 안드로이드 시스템에 알려주는 파일입니다.   &lt;/p&gt;
+&lt;p&gt;하단 코드 위치에
+android:screenOrientation=“portrait”를 추가하면 됩니다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;&amp;lt;manifest xmlns:android=&amp;quot;http://schemas.android.com/apk/res/android&amp;quot;
+  package=&amp;quot;com.bp.oheadline&amp;quot;&amp;gt;
+    &amp;lt;uses-permission android:name=&amp;quot;android.permission.INTERNET&amp;quot; /&amp;gt;
+    &amp;lt;application
+      android:name=&amp;quot;.MainApplication&amp;quot;
+      android:label=&amp;quot;@string/app_name&amp;quot;
+      android:icon=&amp;quot;@mipmap/ic_launcher&amp;quot;
+      android:roundIcon=&amp;quot;@mipmap/ic_launcher_round&amp;quot;
+      android:allowBackup=&amp;quot;false&amp;quot;
+      android:theme=&amp;quot;@style/AppTheme&amp;quot;&amp;gt;
+      &amp;lt;activity
+        android:name=&amp;quot;.MainActivity&amp;quot;
+        android:label=&amp;quot;@string/app_name&amp;quot;
+
+        // ↓ 여기에 코드를 추가합니다.
+        android:screenOrientation=&amp;quot;portrait&amp;quot;
+
+        android:configChanges=&amp;quot;keyboard|keyboardHidden|orientation|screenSize|uiMode&amp;quot;
+        android:launchMode=&amp;quot;singleTask&amp;quot;
+        android:windowSoftInputMode=&amp;quot;adjustResize&amp;quot;&amp;gt;
+        &amp;lt;intent-filter&amp;gt;
+            &amp;lt;action android:name=&amp;quot;android.intent.action.MAIN&amp;quot; /&amp;gt;
+            &amp;lt;category android:name=&amp;quot;android.intent.category.LAUNCHER&amp;quot; /&amp;gt;
+        &amp;lt;/intent-filter&amp;gt;
+      &amp;lt;/activity&amp;gt;
+      &amp;lt;activity android:name=&amp;quot;com.facebook.react.devsupport.DevSettingsActivity&amp;quot; /&amp;gt;
+    &amp;lt;/application&amp;gt;
+&amp;lt;/manifest&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h1 id=&quot;ios에서-가로모드-막기&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#ios%EC%97%90%EC%84%9C-%EA%B0%80%EB%A1%9C%EB%AA%A8%EB%93%9C-%EB%A7%89%EA%B8%B0&quot; aria-label=&quot;ios에서 가로모드 막기 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;iOS에서 가로모드 막기&lt;/h1&gt;
+&lt;p&gt;&lt;strong&gt;ios/projectname/Info.plist&lt;/strong&gt;에서 컨트롤을 합니다.&lt;br&gt;
+iOS 어플리케이션 정보를 담고있는 파일입니다.   &lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;...
+  &amp;lt;dict&amp;gt;
+    ...
+
+    // 이 key의 value를 수정합니다. default가 3줄이 있을텐데 그중 두줄을 지우면 세로모드만 지원합니다.
+    &amp;lt;key&amp;gt;UISupportedInterfaceOrientations&amp;lt;/key&amp;gt;
+    &amp;lt;array&amp;gt;
+      &amp;lt;string&amp;gt;UIInterfaceOrientationPortrait&amp;lt;/string&amp;gt;
+    &amp;lt;/array&amp;gt;
+    ...
+  &amp;lt;/dict&amp;gt;
+...&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[React 라이브러리📚) Momentjs fromNow(), locale 한국 시간으로 수정]]></title><description><![CDATA[안녕하세용 도디예용 오늘은 momentjs 가져왔어용! 시간관련된 작업은 momentjs를 안 쓸수 없죠. 저도 예전...]]></description><link>https://lumen.netlify.com/posts/react-library-1/</link><guid isPermaLink="false">https://lumen.netlify.com/posts/react-library-1/</guid><pubDate>Mon, 27 Jul 2020 11:29:02 GMT</pubDate><content:encoded>&lt;p&gt;안녕하세용 도디예용&lt;br&gt;
 오늘은 momentjs 가져왔어용! 시간관련된 작업은 momentjs를 안 쓸수 없죠.&lt;br&gt;
 저도 예전부터 많이 써왔던 라이브러리인데 오늘은 momentjs에서 locale setting에 대해 말해보려해요.&lt;br&gt;
 momentjs의 locale 기본값은 ‘en’인데 이걸 한국 값인 ‘ko’로 바꿔주어야 합니다.&lt;br&gt;
