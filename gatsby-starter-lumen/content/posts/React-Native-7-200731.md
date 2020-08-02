@@ -15,7 +15,7 @@ description: "안녕하세요 도디예요. 오늘은 react native에서 앱을 
 참고로 앱에서 사용되는 가로모드, 세로모드의 속성에 대한 이미지 입니다.   
 일반적인 가로모드는 Portrait입니다.   
 
-![portrait](media/posts/portrait.png)
+![portrait](/media/posts/portrait.png)
 
 # Android에서 가로모드 막기
 **android/app/src/main/AndroidManifest.xml**에서 컨트롤을 합니다.   

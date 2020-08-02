@@ -21,6 +21,10 @@ module.exports = {
     //   label: 'React',
     //   path: '/category/react/'
     // },
+    // {
+    //   label: 'Next.js',
+    //   path: '/pages/nextjs'
+    // },
     // category : React Native
     // slug : react-native-1/
     {
