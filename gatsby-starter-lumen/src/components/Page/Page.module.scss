@@ -47,3 +47,13 @@
   }
 
 }
+
+td {
+  padding-right: 10px;
+  &:first-child{
+    width: 8rem !important;
+    @media (max-width: 480px) {
+      width: 5rem !important;
+    }
+  }
+}
