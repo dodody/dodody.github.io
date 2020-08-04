@@ -1,4 +1,299 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[도디의 기술블로그]]></title><description><![CDATA[react와 react native로 개발하는걸 사랑하고, UXUI 디자인이 취미인 도딥니다 (๑˃̵ᴗ˂̵)و]]></description><link>https://lumen.netlify.com</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 02 Aug 2020 07:03:43 GMT</lastBuildDate><item><title><![CDATA[RN) react native iOS, Andriod 가로모드 막아버리기, 세로모드만 지원하기]]></title><description><![CDATA[안녕하세요 도디예요. 오늘은 react native에서 앱을 배포할때 실제 기기에서 가로모드에도 세로로 앱이...]]></description><link>https://lumen.netlify.com/posts/react-native-7/</link><guid isPermaLink="false">https://lumen.netlify.com/posts/react-native-7/</guid><pubDate>Thu, 30 Jul 2020 15:19:02 GMT</pubDate><content:encoded>&lt;p&gt;안녕하세요 도디예요.
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[도디의 기술블로그]]></title><description><![CDATA[react와 react native로 개발하는걸 사랑하고, UXUI 디자인이 취미인 도딥니다 (๑˃̵ᴗ˂̵)و]]></description><link>https://lumen.netlify.com</link><generator>GatsbyJS</generator><lastBuildDate>Tue, 04 Aug 2020 06:24:08 GMT</lastBuildDate><item><title><![CDATA[RN) iOS 배포를 위한 Info.plist 공부하기]]></title><description><![CDATA[안녕하세요 도디예요. 오늘은 react native에서 앱을 배포할때 실제 기기에서 가로모드에도 세로로 앱이...]]></description><link>https://lumen.netlify.com/posts/react-native-7/</link><guid isPermaLink="false">https://lumen.netlify.com/posts/react-native-7/</guid><pubDate>Tue, 04 Aug 2020 06:20:06 GMT</pubDate><content:encoded>&lt;p&gt;안녕하세요 도디예요.
+오늘은 iOS 배포를 위해 꼭 필요한 단계인 Info.plist 세팅에 대해 정리해보려 해요.   &lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;/posts/error-note-5/&quot;&gt;RN 에러노트🔥) 시뮬레이터 깨짐? Info.plist에 대하여&lt;/a&gt; 에서도 Info.plist에 대해 언급하기로 했는데요.&lt;br&gt;
+이번 글에서는 완전히 배포와 개발모드를 위한 세팅에 대해서만 정리를 해봅니다.   &lt;/p&gt;
+&lt;p&gt;🏃‍♂️🏃‍♂️🏃‍♂🏃‍♂️🏃‍♂️🏃‍♂️렛츠꼬🏃‍♂️🏃‍♂️🏃‍♂️🏃‍♂️🏃‍🏃‍♂️   &lt;/p&gt;
+&lt;hr&gt;
+&lt;h1 id=&quot;개발-모드를-위한-infoplist&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EA%B0%9C%EB%B0%9C-%EB%AA%A8%EB%93%9C%EB%A5%BC-%EC%9C%84%ED%95%9C-infoplist&quot; aria-label=&quot;개발 모드를 위한 infoplist permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;개발 모드를 위한 Info.plist&lt;/h1&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot;?&amp;gt;
+&amp;lt;!DOCTYPE plist PUBLIC &amp;quot;-//Apple//DTD PLIST 1.0//EN&amp;quot; &amp;quot;http://www.apple.com/DTDs/PropertyList-1.0.dtd&amp;quot;&amp;gt;
+&amp;lt;plist version=&amp;quot;1.0&amp;quot;&amp;gt;
+&amp;lt;dict&amp;gt;
+	&amp;lt;key&amp;gt;CFBundleDevelopmentRegion&amp;lt;/key&amp;gt;
+	&amp;lt;string&amp;gt;ko_KR&amp;lt;/string&amp;gt;
+	&amp;lt;key&amp;gt;CFBundleDisplayName&amp;lt;/key&amp;gt;
+	&amp;lt;string&amp;gt;$(PRODUCT_NAME)&amp;lt;/string&amp;gt;
+	&amp;lt;key&amp;gt;CFBundleExecutable&amp;lt;/key&amp;gt;
+	&amp;lt;string&amp;gt;$(EXECUTABLE_NAME)&amp;lt;/string&amp;gt;
+	&amp;lt;key&amp;gt;CFBundleIdentifier&amp;lt;/key&amp;gt;
+	&amp;lt;string&amp;gt;$(PRODUCT_BUNDLE_IDENTIFIER)&amp;lt;/string&amp;gt;
+	&amp;lt;key&amp;gt;CFBundleInfoDictionaryVersion&amp;lt;/key&amp;gt;
+	&amp;lt;string&amp;gt;6.0&amp;lt;/string&amp;gt;
+	&amp;lt;key&amp;gt;CFBundleName&amp;lt;/key&amp;gt;
+	&amp;lt;string&amp;gt;$(PRODUCT_NAME)&amp;lt;/string&amp;gt;
+	&amp;lt;key&amp;gt;CFBundlePackageType&amp;lt;/key&amp;gt;
+	&amp;lt;string&amp;gt;APPL&amp;lt;/string&amp;gt;
+	&amp;lt;key&amp;gt;CFBundleShortVersionString&amp;lt;/key&amp;gt;
+	&amp;lt;string&amp;gt;$(MARKETING_VERSION)&amp;lt;/string&amp;gt;
+	&amp;lt;key&amp;gt;CFBundleSignature&amp;lt;/key&amp;gt;
+	&amp;lt;string&amp;gt;????&amp;lt;/string&amp;gt;
+	&amp;lt;key&amp;gt;CFBundleVersion&amp;lt;/key&amp;gt;
+	&amp;lt;string&amp;gt;$(CURRENT_PROJECT_VERSION)&amp;lt;/string&amp;gt;
+	&amp;lt;key&amp;gt;LSRequiresIPhoneOS&amp;lt;/key&amp;gt;
+	&amp;lt;false/&amp;gt;
+	&amp;lt;key&amp;gt;NSAppTransportSecurity&amp;lt;/key&amp;gt;
+	&amp;lt;dict&amp;gt;
+		&amp;lt;key&amp;gt;NSAllowsArbitraryLoads&amp;lt;/key&amp;gt;
+		&amp;lt;true/&amp;gt;
+		&amp;lt;key&amp;gt;NSExceptionDomains&amp;lt;/key&amp;gt;
+		&amp;lt;dict&amp;gt;
+			&amp;lt;key&amp;gt;localhost&amp;lt;/key&amp;gt;
+			&amp;lt;dict&amp;gt;
+				&amp;lt;key&amp;gt;NSExceptionAllowsInsecureHTTPLoads&amp;lt;/key&amp;gt;
+				&amp;lt;true/&amp;gt;
+			&amp;lt;/dict&amp;gt;
+		&amp;lt;/dict&amp;gt;
+	&amp;lt;/dict&amp;gt;
+	&amp;lt;key&amp;gt;NSLocationWhenInUseUsageDescription&amp;lt;/key&amp;gt;
+	&amp;lt;string&amp;gt;&amp;lt;/string&amp;gt;
+	&amp;lt;key&amp;gt;UILaunchStoryboardName&amp;lt;/key&amp;gt;
+	&amp;lt;string&amp;gt;LaunchScreen&amp;lt;/string&amp;gt;
+	&amp;lt;key&amp;gt;UIRequiredDeviceCapabilities&amp;lt;/key&amp;gt;
+	&amp;lt;array&amp;gt;
+		&amp;lt;string&amp;gt;armv7&amp;lt;/string&amp;gt;
+	&amp;lt;/array&amp;gt;
+	&amp;lt;key&amp;gt;UISupportedInterfaceOrientations&amp;lt;/key&amp;gt;
+	&amp;lt;array&amp;gt;
+		&amp;lt;string&amp;gt;UIInterfaceOrientationPortrait&amp;lt;/string&amp;gt;
+	&amp;lt;/array&amp;gt;
+	&amp;lt;key&amp;gt;UIViewControllerBasedStatusBarAppearance&amp;lt;/key&amp;gt;
+	&amp;lt;false/&amp;gt;
+&amp;lt;/dict&amp;gt;
+&amp;lt;/plist&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h1 id=&quot;배포를-위한-infoplist&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EB%B0%B0%ED%8F%AC%EB%A5%BC-%EC%9C%84%ED%95%9C-infoplist&quot; aria-label=&quot;배포를 위한 infoplist permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;배포를 위한 Info.plist&lt;/h1&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot;?&amp;gt;
+&amp;lt;!DOCTYPE plist PUBLIC &amp;quot;-//Apple//DTD PLIST 1.0//EN&amp;quot; &amp;quot;http://www.apple.com/DTDs/PropertyList-1.0.dtd&amp;quot;&amp;gt;
+&amp;lt;plist version=&amp;quot;1.0&amp;quot;&amp;gt;
+&amp;lt;dict&amp;gt;
+	&amp;lt;key&amp;gt;CFBundleDevelopmentRegion&amp;lt;/key&amp;gt;
+	&amp;lt;string&amp;gt;ko_KR&amp;lt;/string&amp;gt;
+	&amp;lt;key&amp;gt;CFBundleDisplayName&amp;lt;/key&amp;gt;
+	&amp;lt;string&amp;gt;$(PRODUCT_NAME)&amp;lt;/string&amp;gt;
+	&amp;lt;key&amp;gt;CFBundleExecutable&amp;lt;/key&amp;gt;
+	&amp;lt;string&amp;gt;$(EXECUTABLE_NAME)&amp;lt;/string&amp;gt;
+	&amp;lt;key&amp;gt;CFBundleIdentifier&amp;lt;/key&amp;gt;
+	&amp;lt;string&amp;gt;$(PRODUCT_BUNDLE_IDENTIFIER)&amp;lt;/string&amp;gt;
+	&amp;lt;key&amp;gt;CFBundleInfoDictionaryVersion&amp;lt;/key&amp;gt;
+	&amp;lt;string&amp;gt;6.0&amp;lt;/string&amp;gt;
+	&amp;lt;key&amp;gt;CFBundleName&amp;lt;/key&amp;gt;
+	&amp;lt;string&amp;gt;$(PRODUCT_NAME)&amp;lt;/string&amp;gt;
+	&amp;lt;key&amp;gt;CFBundlePackageType&amp;lt;/key&amp;gt;
+	&amp;lt;string&amp;gt;APPL&amp;lt;/string&amp;gt;
+	&amp;lt;key&amp;gt;CFBundleShortVersionString&amp;lt;/key&amp;gt;
+	&amp;lt;string&amp;gt;$(MARKETING_VERSION)&amp;lt;/string&amp;gt;
+	&amp;lt;key&amp;gt;CFBundleSignature&amp;lt;/key&amp;gt;
+	&amp;lt;string&amp;gt;????&amp;lt;/string&amp;gt;
+	&amp;lt;key&amp;gt;CFBundleVersion&amp;lt;/key&amp;gt;
+	&amp;lt;string&amp;gt;$(CURRENT_PROJECT_VERSION)&amp;lt;/string&amp;gt;
+	&amp;lt;key&amp;gt;LSRequiresIPhoneOS&amp;lt;/key&amp;gt;
+	&amp;lt;false/&amp;gt;
+	&amp;lt;key&amp;gt;NSLocationWhenInUseUsageDescription&amp;lt;/key&amp;gt;
+	&amp;lt;string&amp;gt;&amp;lt;/string&amp;gt;
+	&amp;lt;key&amp;gt;UILaunchStoryboardName&amp;lt;/key&amp;gt;
+	&amp;lt;string&amp;gt;LaunchScreen&amp;lt;/string&amp;gt;
+	&amp;lt;key&amp;gt;UIRequiredDeviceCapabilities&amp;lt;/key&amp;gt;
+	&amp;lt;array&amp;gt;
+		&amp;lt;string&amp;gt;armv7&amp;lt;/string&amp;gt;
+	&amp;lt;/array&amp;gt;
+	&amp;lt;key&amp;gt;UISupportedInterfaceOrientations&amp;lt;/key&amp;gt;
+	&amp;lt;array&amp;gt;
+		&amp;lt;string&amp;gt;UIInterfaceOrientationPortrait&amp;lt;/string&amp;gt;
+	&amp;lt;/array&amp;gt;
+	&amp;lt;key&amp;gt;UIViewControllerBasedStatusBarAppearance&amp;lt;/key&amp;gt;
+	&amp;lt;false/&amp;gt;
+&amp;lt;/dict&amp;gt;
+&amp;lt;/plist&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[RN 에러노트🔥) 시뮬레이터 깨짐? Info.plist에 대하여]]></title><description><![CDATA[안녕하세요! 도디예요! 오늘의 에러노트는 제가 엄청난 삽질로 이뤄진 에러스토리를 공유하려합니다. ...]]></description><link>https://lumen.netlify.com/posts/error-note-4/</link><guid isPermaLink="false">https://lumen.netlify.com/posts/error-note-4/</guid><pubDate>Mon, 03 Aug 2020 05:45:10 GMT</pubDate><content:encoded>&lt;h1 id=&quot;개요&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EA%B0%9C%EC%9A%94&quot; aria-label=&quot;개요 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;👋개요&lt;/h1&gt;
+&lt;p&gt;안녕하세요! 도디예요!&lt;br&gt;
+오늘의 에러노트는 제가 엄청난 삽질로 이뤄진 에러스토리를 공유하려합니다.   &lt;/p&gt;
+&lt;p&gt;아직 앱스토어, 플레이스토어 배포 전의 &lt;strong&gt;회사앱&lt;/strong&gt;이기 때문에 제대로 보이진않지만,&lt;br&gt;
+아래처럼 나와야 하는데 위처럼 뷰가 내가 원하는 것처럼 나오지 않는 것이다!!! 제발 이러지 말아달라구..&lt;br&gt;
+나는 이 현상을 시뮬레이터가 깨져보인다 라고 말하고 다녔다..   &lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://images.velog.io/images/dody_/post/a2304613-ee6d-401f-81a1-05326d243249/Screen%20Shot%202020-07-29%20at%209.13.46%20PM%20copy.png&quot; width=&quot;30%&quot;&gt;&lt;/img&gt;&lt;/p&gt;
+&lt;p&gt;시뮬레이터를 업데이트 하기도 했고, 시뮬레이터는 처음에 Xcode설치하면 같이 설치가 되기 때문에 Xcode도 다시 설치해봤다.&lt;br&gt;
+달라지는건 없었고, 빌드 할때 나오는 오류에 대해 찬찬히  찾아보기 시작했다.&lt;br&gt;
+몇십개의 해결책이라는 방법들로 빌드 파일을 클린해보기도 하고, 시뮬레이터도 리셋도 몇십번을 해봣다.   &lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;결론은 Info.plist 파일이 잘못되었던 것이다. 풕..&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;rn 작업을 하면서 Info.plist 건들이라는건 이리저리 많이 봤는데, 솔직히 이 폴더가 뭘 의미하는지도 모르면서 글자를 수정하기만 했다.&lt;br&gt;
+이번 기회에 Info.plist를 깊게 살펴보고자 한다.&lt;/p&gt;
+&lt;h1 id=&quot;infoplist-안녕&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#infoplist-%EC%95%88%EB%85%95&quot; aria-label=&quot;infoplist 안녕 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;👋Info.plist, 안녕?&lt;/h1&gt;
+&lt;p&gt;ios&gt;프로젝트명&gt;Info.plist 에 위치해 있는 Info.plist는 Xcode에서도 정보를 확인해볼 수 있다.   &lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://images.velog.io/images/dody_/post/f557f862-342a-479d-b28d-42c706c649cb/Screen%20Shot%202020-07-30%20at%2011.18.14%20AM.png&quot;&gt;&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot;?&amp;gt;
+&amp;lt;!DOCTYPE plist PUBLIC &amp;quot;-//Apple//DTD PLIST 1.0//EN&amp;quot; &amp;quot;http://www.apple.com/DTDs/PropertyList-1.0.dtd&amp;quot;&amp;gt;
+&amp;lt;plist version=&amp;quot;1.0&amp;quot;&amp;gt;
+&amp;lt;dict&amp;gt;
+	&amp;lt;key&amp;gt;CFBundleDevelopmentRegion&amp;lt;/key&amp;gt;
+	&amp;lt;string&amp;gt;ko&amp;lt;/string&amp;gt;
+	&amp;lt;key&amp;gt;CFBundleDisplayName&amp;lt;/key&amp;gt;
+	&amp;lt;string&amp;gt;$(PRODUCT_NAME)&amp;lt;/string&amp;gt;
+	&amp;lt;key&amp;gt;CFBundleExecutable&amp;lt;/key&amp;gt;
+	&amp;lt;string&amp;gt;$(EXECUTABLE_NAME)&amp;lt;/string&amp;gt;
+	&amp;lt;key&amp;gt;CFBundleIdentifier&amp;lt;/key&amp;gt;
+	&amp;lt;string&amp;gt;$(PRODUCT_BUNDLE_IDENTIFIER)&amp;lt;/string&amp;gt;
+	&amp;lt;key&amp;gt;CFBundleInfoDictionaryVersion&amp;lt;/key&amp;gt;
+	&amp;lt;string&amp;gt;6.0&amp;lt;/string&amp;gt;
+	&amp;lt;key&amp;gt;CFBundleName&amp;lt;/key&amp;gt;
+	&amp;lt;string&amp;gt;$(PRODUCT_NAME)&amp;lt;/string&amp;gt;
+	&amp;lt;key&amp;gt;CFBundlePackageType&amp;lt;/key&amp;gt;
+	&amp;lt;string&amp;gt;APPL&amp;lt;/string&amp;gt;
+	&amp;lt;key&amp;gt;CFBundleShortVersionString&amp;lt;/key&amp;gt;
+	&amp;lt;string&amp;gt;1.0&amp;lt;/string&amp;gt;
+	&amp;lt;key&amp;gt;CFBundleSignature&amp;lt;/key&amp;gt;
+	&amp;lt;string&amp;gt;????&amp;lt;/string&amp;gt;
+	&amp;lt;key&amp;gt;CFBundleVersion&amp;lt;/key&amp;gt;
+	&amp;lt;string&amp;gt;1&amp;lt;/string&amp;gt;
+	&amp;lt;key&amp;gt;LSRequiresIPhoneOS&amp;lt;/key&amp;gt;
+	&amp;lt;true/&amp;gt;
+	&amp;lt;key&amp;gt;NSAppTransportSecurity&amp;lt;/key&amp;gt;
+	&amp;lt;dict&amp;gt;
+		&amp;lt;key&amp;gt;NSAllowsArbitraryLoads&amp;lt;/key&amp;gt;
+		&amp;lt;true/&amp;gt;
+		&amp;lt;key&amp;gt;NSExceptionDomains&amp;lt;/key&amp;gt;
+		&amp;lt;dict&amp;gt;
+			&amp;lt;key&amp;gt;localhost&amp;lt;/key&amp;gt;
+			&amp;lt;dict&amp;gt;
+				&amp;lt;key&amp;gt;NSExceptionAllowsInsecureHTTPLoads&amp;lt;/key&amp;gt;
+				&amp;lt;true/&amp;gt;
+			&amp;lt;/dict&amp;gt;
+		&amp;lt;/dict&amp;gt;
+	&amp;lt;/dict&amp;gt;
+	&amp;lt;key&amp;gt;NSLocationWhenInUseUsageDescription&amp;lt;/key&amp;gt;
+	&amp;lt;string&amp;gt;&amp;lt;/string&amp;gt;
+	&amp;lt;key&amp;gt;UILaunchStoryboardName&amp;lt;/key&amp;gt;
+	&amp;lt;string&amp;gt;LaunchScreen&amp;lt;/string&amp;gt;
+	&amp;lt;key&amp;gt;UIRequiredDeviceCapabilities&amp;lt;/key&amp;gt;
+	&amp;lt;array&amp;gt;
+		&amp;lt;string&amp;gt;armv7&amp;lt;/string&amp;gt;
+	&amp;lt;/array&amp;gt;
+	&amp;lt;key&amp;gt;UISupportedInterfaceOrientations&amp;lt;/key&amp;gt;
+	&amp;lt;array&amp;gt;
+		&amp;lt;string&amp;gt;UIInterfaceOrientationPortrait&amp;lt;/string&amp;gt;
+		&amp;lt;string&amp;gt;UIInterfaceOrientationLandscapeLeft&amp;lt;/string&amp;gt;
+		&amp;lt;string&amp;gt;UIInterfaceOrientationLandscapeRight&amp;lt;/string&amp;gt;
+	&amp;lt;/array&amp;gt;
+	&amp;lt;key&amp;gt;UIViewControllerBasedStatusBarAppearance&amp;lt;/key&amp;gt;
+	&amp;lt;false/&amp;gt;
+&amp;lt;/dict&amp;gt;
+&amp;lt;/plist&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;코드는 이렇게 생겼다. 으.. 별로 친해지고 싶게 안생겼지만. 친해져보자.&lt;br&gt;
+모든 아이폰 어플리케이션은 Info.plist를 가지고 있다. Info.plist는 어플리케이션의 이름이나 앱 아이콘.. 등의 기본정보를 가지고 있다.&lt;br&gt;
+자세하게 &lt;strong&gt;어떤 기본정보들이 있고, 어떻게 컨트롤이 가능한지&lt;/strong&gt; 하나하나 천천히 살펴보도록 하자.    &lt;/p&gt;
+&lt;h1 id=&quot;하나하나-살펴보기&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%ED%95%98%EB%82%98%ED%95%98%EB%82%98-%EC%82%B4%ED%8E%B4%EB%B3%B4%EA%B8%B0&quot; aria-label=&quot;하나하나 살펴보기 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;🚥하나하나 살펴보기&lt;/h1&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot;?&amp;gt;
+&amp;lt;!DOCTYPE plist PUBLIC &amp;quot;-//Apple//DTD PLIST 1.0//EN&amp;quot; &amp;quot;http://www.apple.com/DTDs/PropertyList-1.0.dtd&amp;quot;&amp;gt;
+&amp;lt;plist version=&amp;quot;1.0&amp;quot;&amp;gt;
+&amp;lt;dict&amp;gt;
+	// 번들의 주 언어 또는 주 지역 (type: string)
+	&amp;lt;key&amp;gt;CFBundleDevelopmentRegion&amp;lt;/key&amp;gt;
+	&amp;lt;string&amp;gt;ko&amp;lt;/string&amp;gt;
+    
+	// 아이콘과 같이 보이는 앱 이름 (type: string)
+	&amp;lt;key&amp;gt;CFBundleDisplayName&amp;lt;/key&amp;gt;
+	&amp;lt;string&amp;gt;$(PRODUCT_NAME)&amp;lt;/string&amp;gt;
+    
+	// ??
+	&amp;lt;key&amp;gt;CFBundleExecutable&amp;lt;/key&amp;gt;
+	&amp;lt;string&amp;gt;$(EXECUTABLE_NAME)&amp;lt;/string&amp;gt;
+    
+	// 어플리케이션 고유 식별자, 일반적으로 com.회사명.프로젝트명으로 구성 (type: string)
+	&amp;lt;key&amp;gt;CFBundleIdentifier&amp;lt;/key&amp;gt;
+	&amp;lt;string&amp;gt;$(PRODUCT_BUNDLE_IDENTIFIER)&amp;lt;/string&amp;gt;
+    
+	// Info.plist 형식의 버전 (type: string)
+	&amp;lt;key&amp;gt;CFBundleInfoDictionaryVersion&amp;lt;/key&amp;gt;
+	&amp;lt;string&amp;gt;6.0&amp;lt;/string&amp;gt;
+    
+	// 어플리케이션의 실제 이름 (type: string)
+	&amp;lt;key&amp;gt;CFBundleName&amp;lt;/key&amp;gt;
+	&amp;lt;string&amp;gt;$(PRODUCT_NAME)&amp;lt;/string&amp;gt;
+    
+	// 애플리케이션 실행 OS 코드, 번들 종류를 나타내는 코드 (type: string)
+	&amp;lt;key&amp;gt;CFBundlePackageType&amp;lt;/key&amp;gt;
+	&amp;lt;string&amp;gt;AAAA&amp;lt;/string&amp;gt;
+    
+	// 번들의 릴리즈 버전 (type: string)
+	&amp;lt;key&amp;gt;CFBundleShortVersionString&amp;lt;/key&amp;gt;
+	&amp;lt;string&amp;gt;1.0&amp;lt;/string&amp;gt;
+    
+	// 네글자로 이뤄진 번들 식별 코드, 애플리케이션 개발자의 OS 코드
+	&amp;lt;key&amp;gt;CFBundleSignature&amp;lt;/key&amp;gt;
+	&amp;lt;string&amp;gt;????&amp;lt;/string&amp;gt;
+    
+	// 번들의 릴리즈 버전
+	&amp;lt;key&amp;gt;CFBundleVersion&amp;lt;/key&amp;gt;
+	&amp;lt;string&amp;gt;1&amp;lt;/string&amp;gt;
+    
+	// iOS에서만 실행할 번들인지
+	&amp;lt;key&amp;gt;LSRequiresIPhoneOS&amp;lt;/key&amp;gt;
+	&amp;lt;true/&amp;gt;
+    
+	// 배포시에 지워야 하는것, 
+	&amp;lt;key&amp;gt;NSAppTransportSecurity&amp;lt;/key&amp;gt;
+	&amp;lt;dict&amp;gt;
+		&amp;lt;key&amp;gt;NSAllowsArbitraryLoads&amp;lt;/key&amp;gt;
+		&amp;lt;true/&amp;gt;
+		&amp;lt;key&amp;gt;NSExceptionDomains&amp;lt;/key&amp;gt;
+		&amp;lt;dict&amp;gt;
+			&amp;lt;key&amp;gt;localhost&amp;lt;/key&amp;gt;
+			&amp;lt;dict&amp;gt;
+				&amp;lt;key&amp;gt;NSExceptionAllowsInsecureHTTPLoads&amp;lt;/key&amp;gt;
+				&amp;lt;true/&amp;gt;
+			&amp;lt;/dict&amp;gt;
+		&amp;lt;/dict&amp;gt;
+	&amp;lt;/dict&amp;gt;
+    
+	//위치 정보에 접근해야 하는 이유 (권한 요청 대화 상자에 표시된다)
+	&amp;lt;key&amp;gt;NSLocationWhenInUseUsageDescription&amp;lt;/key&amp;gt;
+	&amp;lt;string&amp;gt;&amp;lt;/string&amp;gt;
+    
+	// ? 
+	&amp;lt;key&amp;gt;UILaunchStoryboardName&amp;lt;/key&amp;gt;
+	&amp;lt;string&amp;gt;LaunchScreen&amp;lt;/string&amp;gt;
+    
+	// 앱 실행에 필요한 요구조건들
+	&amp;lt;key&amp;gt;UIRequiredDeviceCapabilities&amp;lt;/key&amp;gt;
+	&amp;lt;array&amp;gt;
+		&amp;lt;string&amp;gt;armv7&amp;lt;/string&amp;gt;
+	&amp;lt;/array&amp;gt;
+    
+	// 앱이 지원하는 인터페이스 방향, 가로버전, 세로버전 지원하는지 안하는지
+	// 자세한 수정은 아래를 참고
+	&amp;lt;key&amp;gt;UISupportedInterfaceOrientations&amp;lt;/key&amp;gt;
+	&amp;lt;array&amp;gt;
+		&amp;lt;string&amp;gt;UIInterfaceOrientationPortrait&amp;lt;/string&amp;gt;
+		&amp;lt;string&amp;gt;UIInterfaceOrientationLandscapeLeft&amp;lt;/string&amp;gt;
+		&amp;lt;string&amp;gt;UIInterfaceOrientationLandscapeRight&amp;lt;/string&amp;gt;
+	&amp;lt;/array&amp;gt;
+	&amp;lt;key&amp;gt;UIViewControllerBasedStatusBarAppearance&amp;lt;/key&amp;gt;
+	&amp;lt;false/&amp;gt;
+&amp;lt;/dict&amp;gt;
+&amp;lt;/plist&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h1 id=&quot;더-자세히-살펴보기&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EB%8D%94-%EC%9E%90%EC%84%B8%ED%9E%88-%EC%82%B4%ED%8E%B4%EB%B3%B4%EA%B8%B0&quot; aria-label=&quot;더 자세히 살펴보기 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;🚥더 자세히 살펴보기&lt;/h1&gt;
+&lt;h3 id=&quot;uisupportedinterfaceorientations&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#uisupportedinterfaceorientations&quot; aria-label=&quot;uisupportedinterfaceorientations permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;UISupportedInterfaceOrientations&lt;/h3&gt;
+&lt;p&gt;앱이 지원하는 인터페이스 방향, 가로버전, 세로버전 지원하는지 안하는지&lt;br&gt;
+나는 디바이스를 가로로 해도 세로만 보이게 하고 싶었다. 그렇다면 아래처럼 코드를 수정하면 된다.   &lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;// before
+
+&amp;lt;key&amp;gt;UISupportedInterfaceOrientations&amp;lt;/key&amp;gt;
+&amp;lt;array&amp;gt;
+	&amp;lt;string&amp;gt;UIInterfaceOrientationPortrait&amp;lt;/string&amp;gt;
+	&amp;lt;string&amp;gt;UIInterfaceOrientationLandscapeLeft&amp;lt;/string&amp;gt;
+	&amp;lt;string&amp;gt;UIInterfaceOrientationLandscapeRight&amp;lt;/string&amp;gt;
+&amp;lt;/array&amp;gt;
+
+// after
+&amp;lt;key&amp;gt;UISupportedInterfaceOrientations&amp;lt;/key&amp;gt;
+&amp;lt;array&amp;gt;
+	&amp;lt;string&amp;gt;UIInterfaceOrientationPortrait&amp;lt;/string&amp;gt;
+&amp;lt;/array&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;참고로 portrait와 landscape의 차이를 위해 이미지를 하나 첨부한다.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://images.velog.io/images/dody_/post/a35bed46-edf5-4d80-9fa0-043af27d432c/Screen%20Shot%202020-07-30%20at%2012.52.49%20PM.png&quot;&gt;&lt;/p&gt;
+&lt;h1 id=&quot;더-알아두면-좋을-infoplist-key-value&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EB%8D%94-%EC%95%8C%EC%95%84%EB%91%90%EB%A9%B4-%EC%A2%8B%EC%9D%84-infoplist-key-value&quot; aria-label=&quot;더 알아두면 좋을 infoplist key value permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;🚥더 알아두면 좋을 Info.plist Key, value&lt;/h1&gt;
+&lt;p&gt;…&lt;/p&gt;
+&lt;p&gt;여기까지고, 프로젝트 상황에 맞는 설정을 해주어야 사용자의 경험과 신뢰도와 연결이 된다.&lt;br&gt;
+정확한 정보를 파악하고 잘 세팅해서 좀더 완성도 높은 앱개발을 하자~~~&lt;/p&gt;</content:encoded></item><item><title><![CDATA[RN) react native iOS, Andriod 가로모드 막아버리기, 세로모드만 지원하기]]></title><description><![CDATA[안녕하세요 도디예요. 오늘은 react native에서 앱을 배포할때 실제 기기에서 가로모드에도 세로로 앱이...]]></description><link>https://lumen.netlify.com/posts/react-native-7/</link><guid isPermaLink="false">https://lumen.netlify.com/posts/react-native-7/</guid><pubDate>Thu, 30 Jul 2020 15:19:02 GMT</pubDate><content:encoded>&lt;p&gt;안녕하세요 도디예요.
 오늘은 react native에서 앱을 배포할때 실제 기기에서 가로모드에도 세로로 앱이 보이도록 막는법에 대해 알아보도록합니다.   &lt;/p&gt;
 &lt;p&gt;참고로 앱에서 사용되는 가로모드, 세로모드의 속성에 대한 이미지 입니다.&lt;br&gt;
 일반적인 가로모드는 Portrait입니다.   &lt;/p&gt;
