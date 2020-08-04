@@ -3,7 +3,7 @@ title: RN) iOS 배포를 위한 Info.plist 공부하기
 date: "2020-08-04T15:20:06+09:00"
 template: "post"
 draft: false
-slug: "react-native-7/"
+slug: "react-native-8/"
 category: "React Native"
 tags:
 description: "안녕하세요 도디예요. 오늘은 react native에서 앱을 배포할때 실제 기기에서 가로모드에도 세로로 앱이..."
