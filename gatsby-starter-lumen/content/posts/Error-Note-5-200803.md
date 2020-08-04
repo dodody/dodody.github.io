@@ -1,6 +1,6 @@
 ---
 title: RN 에러노트🔥) 시뮬레이터 깨짐? Info.plist에 대하여
-date: "2020-07-27T01:53:58+09:00"
+date: "2020-08-03T14:45:10+09:00"
 template: "post"
 draft: false
 slug: "error-note-4/"
