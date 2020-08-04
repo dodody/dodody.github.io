@@ -46,7 +46,7 @@ module.exports = {
     // category : 에러노트
     // slug : error-note-1/
     {
-      label: '에러노트',
+      label: 'RN에러노트',
       path: '/category/에러노트/'
     },
     // category : 개발기
