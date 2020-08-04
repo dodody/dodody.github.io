@@ -127,3 +127,49 @@ description: "안녕하세요 도디예요. 오늘은 react native에서 앱을 
 
 ```
 
+---
+
+# 추가하고 삭제한 사항에 대해
+
+### HTTPS 통신 설정 (배포 시 삭제)
+애플에서 어플이 외부와 HTTP 통신을 할때는 HTTPS로 통신을 하지 않으면 통신이 불가하도록 설정하는 기능을 넣었다고 합니다.   
+하지만 RN(react native)를 개발할때는 로컬에 개발 서버를 띄우고 개발 서버와 통신하여 어플을 기동하므로   
+RN(react native)는 이 기능을 기본적으로 사용하지 않도록 설정해놨습니다.   
+하지만 실제 빌드하여 제공할 때는 개발 서버를 이용하지 않으므로 이 부분을 제거할 필요가 있습니다.   
+다시 개발을 할 경우에는 이부분을 복원해야합니다. 위에서 설명했지만 개발시 개발 서버(localhost)와 통신은 HTTP로 하기 때문입니다.   
+
+```
+<key>NSAppTransportSecurity</key>
+<dict>
+  <key>NSAllowsArbitraryLoads</key>
+  <true/>
+  <key>NSExceptionDomains</key>
+  <dict>
+    <key>localhost</key>
+    <dict>
+      <key>NSExceptionAllowsInsecureHTTPLoads</key>
+      <true/>
+    </dict>
+  </dict>
+</dict>
+```
+
+
+### Location 권한 설명 추가
+
+```
+<key>NSLocationWhenInUseUsageDescription</key>
+<string></string>
+```
+위의 코드는 location과 관련된 설정이다.    
+사용을 하지 않는 분들은 삭제해도 되지만, 광고에서 위치 정보를 하는 경우 아래와 같이 수정해야 한다.   
+이부분을 수정하지 않으면 앱을 앱스토어 커넥터(Appstore Connector)에 업로드할시 문제가 발생한다.    
+
+```
+<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+<string>$(PRODUCT_NAME) needs Location access for useful advertisement</string>
+<key>NSLocationAlwaysUsageDescription</key>
+<string>$(PRODUCT_NAME) needs Location access for useful advertisement</string>
+<key>NSLocationWhenInUseUsageDescription</key>
+<string>$(PRODUCT_NAME) needs Location access for useful advertisement</string>
+```
