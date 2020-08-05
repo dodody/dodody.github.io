@@ -14,7 +14,7 @@ socialImage: "/media/image-4.jpg"
 [- DOM이란?](/pages/techDic-3-DOM이란)   
 
 ### css   
-[- flex?](/pages/techDic-3-DOM이란)   
+[- flex?](/pages/techDic-4-flex)   
 
 
 [- vue.js, 리액트, 앵귤러의 차이는?](/pages/techDic-1-리액트-구동원리)   
