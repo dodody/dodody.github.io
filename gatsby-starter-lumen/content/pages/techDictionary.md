@@ -13,6 +13,10 @@ socialImage: "/media/image-4.jpg"
 [- Next.js, SSR 그리고 SPA](/pages/techDic-2-Nextjs-SSR-그리고-SPA)   
 [- DOM이란?](/pages/techDic-3-DOM이란)   
 
+### css   
+[- flex?](/pages/techDic-3-DOM이란)   
+
+
 [- vue.js, 리액트, 앵귤러의 차이는?](/pages/techDic-1-리액트-구동원리)   
 [- 프레임워크와 라이브러리의 차이는?](/pages/techDic-1-리액트-구동원리)   
 [- CRA란](/pages/techDic-1-리액트-구동원리)   

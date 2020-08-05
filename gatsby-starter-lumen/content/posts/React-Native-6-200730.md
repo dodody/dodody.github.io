@@ -26,6 +26,17 @@ description: "안녕하세요 도디예용 오늘은 react native 프로젝트�
 react-native bundle --entry-file index.js --platform ios --dev false --bundle-output ios/main.jsbundle --assets-dest ios
 ```
 
+방법2
+```
+react-native bundle --entry-file index.js --platform ios --dev false --bundle-output ios/main.jsbundle --assets-dest ios
+react-native bundle --entry-file index.js --platform ios --dev false --bundle-output ios/main.jsbundle --assets-dest ios
+
+react-native bundle --dev false --entry-file index.ios.js --bundle-output ios/main.jsbundle --platform ios
+react-native bundle --dev false --entry-file index.js --bundle-output ios/main.jsbundle --platform ios
+
+```
+
+
 ### 2. Xcode로 돌아와 Device를 Generic iOS device로 바꾼다.
 ### 3. Product > Scheme > Edit Scheme...에서 Run > info > Build Configuration을 Debug > Release로 바꾼다.
 ### 3. Product > Build
