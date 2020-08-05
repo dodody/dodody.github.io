@@ -6,7 +6,7 @@ module.exports = {
   title: '도디의 기술블로그',
   subtitle: 'react와 react native로 개발하는걸 사랑하고, UXUI 디자인이 취미인 도딥니다 (๑˃̵ᴗ˂̵)و',
   copyright: '© All rights reserved.',
-  disqusShortname: 'dody',
+  disqusShortname: 'https-dodody-github-io',
   postsPerPage: 10,
   googleAnalyticsId: 'G-NJ16MGGE93',
   useKatex: false,
@@ -85,7 +85,7 @@ module.exports = {
       line: '',
       gitlab: '',
       weibo: '',
-      codepen: '',
+      codepen: 'https://codepen.io/dodody',
       youtube: '',
       soundcloud: '',
     }
